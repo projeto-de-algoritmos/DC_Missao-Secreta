@@ -5,8 +5,8 @@
 ## Aluna
 |Matrícula | Aluna |
 | -- | -- |
-| 20/0041606  |  Marina Márcia Costa de Souza |
 | 20/2046040  |  Dara Maria Barbosa de Sousa  |
+| 20/0041606  |  Marina Márcia Costa de Souza |
 
 ## Sobre 
 O detetive irá usar o algoritmo de ordenação merge sort, para contar o número de inversões em uma sequência de números e informar também se não houver inversões.
