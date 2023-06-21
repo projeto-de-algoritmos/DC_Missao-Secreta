@@ -49,10 +49,26 @@ def count_inversions(arr):
     _, inversions = merge_sort(arr)
     return inversions
 
+def exibir_janela_sem_numeros():
+    janela_sem_numeros = tk.Toplevel()
+    janela_sem_numeros.title("Erro na Investigação")
+    janela_sem_numeros.geometry("300x150")
+    mensagem_label = ttk.Label(janela_sem_numeros, text="Nenhum número foi inserido.\n"
+                                                        "Digite uma sequência numérica\n"
+                                                        "para continuar.", 
+                              font=("Arial", 12))
+    mensagem_label.pack(pady=20)
+    fechar_button = ttk.Button(janela_sem_numeros, text="Fechar", command=janela_sem_numeros.destroy)
+    fechar_button.pack()
+
 def verificar_inversoes():
     global entry, resultado_label, detective_label
 
     numeros = entry.get()
+    if not numeros:
+        exibir_janela_sem_numeros()
+        return
+
     numeros = numeros.split()
     numeros = [int(num) for num in numeros]
 
@@ -64,7 +80,6 @@ def verificar_inversoes():
         detective_label.config(text="Essa sequência não possui inversões. O detetive agradece sua colaboração!")
     else:
         detective_label.config(text="Essa sequência possui inversões. O detetive investigará mais a fundo!")
-
 def resize_image(event):
     global imagem_original, imagem_label, imagem_detetive
 
@@ -83,10 +98,13 @@ def abrir_janela_principal():
 
     janela = tk.Tk()
     janela.title("Jogo do Detive - Investigação")
-    janela.geometry("600x400")
+    janela.geometry("600x300")
 
-    titulo_label = ttk.Label(janela, text="001 - Caso da Contagem de Inversões!", font=("Arial", 16))
-    instrucao_label = ttk.Label(janela, text="Digite uma sequência de números separados por espaços:", font=("Arial", 12))
+    titulo_label = ttk.Label(janela, text="Caso 004 - Contagem de Inversões!", font=("Arial", 16, "bold"))
+    instrucao_label = ttk.Label(janela, text="Você precisa digitar uma sequência de números separados por espaços\n"
+                                             "para que o detetive possa seguir com a sua investigação. Lembre-se que\n"
+                                             "você pode dar uma sequência já ordenada ou não.", 
+                                font=("Arial", 12))
     entry = ttk.Entry(janela, font=("Arial", 12))
     verificar_button = ttk.Button(janela, text="Verificar", command=verificar_inversoes)
     resultado_label = ttk.Label(janela, text="", font=("Arial", 12))
@@ -94,8 +112,8 @@ def abrir_janela_principal():
 
     titulo_label.pack(pady=10)
     instrucao_label.pack()
-    entry.pack(pady=5)
-    verificar_button.pack(pady=5)
+    entry.pack(pady=10)
+    verificar_button.pack(pady=10)
     resultado_label.pack()
     detective_label.pack(pady=10)
 
@@ -107,25 +125,26 @@ def aumentar_texto(event):
 
     nova_tamanho_fonte = max(int(event.width / 40), 10)
     texto_label.configure(font=("Arial", nova_tamanho_fonte, "bold"))
+    
 def abrir_janela_inicial():
     global janela_inicial, imagem_original, imagem_detetive, imagem_label
 
     janela_inicial = tk.Tk()
     janela_inicial.title("Jogo do Detetive - Início")
-    janela_inicial.geometry("600x400")
+    janela_inicial.geometry("800x600+10+10")
 
     imagem_original = Image.open("assets/detetive.png")
     imagem_detetive = ImageTk.PhotoImage(imagem_original)
     imagem_label = ttk.Label(janela_inicial, image=imagem_detetive)
     imagem_label.pack(expand=True, fill="both")
     
-    texto_label = ttk.Label(janela_inicial, text="O renomado detetive Ryan Donovan precisa da\n"
-                                             "sua ajuda para solucionar um caso que acaba\n"
-                                             "de surgir. Clique em iniciar para a aventura\n"
-                                             "começar e boa sorte!",
-                       font=("Arial", 12, "bold"))
+    texto_label = ttk.Label(janela_inicial, text="O renomado detetive Ryan Donovan precisa da sua\n"
+                                                 "ajuda para solucionar uma das pistas de um caso\n"
+                                                 "que acaba de surgir. Clique em 'Iniciar' para a\n"
+                                                 "aventura começar e boa sorte!",
+                       font=("Arial", 14, "bold"))
     texto_label.configure(background='white')
-    texto_label.place(relx=0.40, rely=0.40, anchor="center")
+    texto_label.place(relx=0.38, rely=0.40, anchor="center")
     
     iniciar_button = ttk.Button(janela_inicial, text="Iniciar", command=abrir_janela_principal)
     iniciar_button.place(relx=0.45, rely=0.60, anchor="center")

@@ -1,4 +1,4 @@
-# Missao Secreta
+# Missão Secreta
 
 **Conteúdo da Disciplina**: Dividir e Conquistar <br>
 
@@ -12,7 +12,9 @@
 O detetive irá usar o algoritmo de ordenação merge sort, para contar o número de inversões em uma sequência de números e informar também se não houver inversões.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![ScreenShot1](./assets/tela_1.png)
+![ScreenShot1](./assets/tela_2.png)
+![ScreenShot1](./assets/tela_3.png)
 
 ## Instalação 
 **Linguagem**: Python 3.7.9<br>
