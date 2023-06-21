@@ -26,9 +26,3 @@ Instale as dependêcias necessarias:
 ```
 pip install -r requirements.txt
 ```
-
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
