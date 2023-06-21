@@ -9,19 +9,34 @@
 | 20/0041606  |  Marina Márcia Costa de Souza |
 
 ## Sobre 
-O detetive irá usar o algoritmo de ordenação merge sort, para contar o número de inversões em uma sequência de números e informar também se não houver inversões.
+O projeto consiste em uma interface gráfica e interativa que permite ao usuário inserir uma sequência numérica, separada por espaços, que pode estar ou não ordenada. Utilizando a técnica de ordenação conhecida como Merge Sort, o programa conta o número de inversões presentes na sequência de números. Para realizar essa tarefa, o projeto implementa as funções merge_sort, merge e count_inversions.
 
 ## Screenshots
-<<<<<<< HEAD
 ![ScreenShot1](./assets/tela_1.png)
 ![ScreenShot1](./assets/tela_2.png)
 ![ScreenShot1](./assets/tela_3.png)
 
-## Instalação 
-**Linguagem**: Python 3.7.9<br>
+## Instalação  
+**Linguagem**: Python 3.7.9 <br>
 
-Instale as dependêcias necessarias:
+Uma vez que o python for instalado, execute o comando abaixo para instalar as dependências:
 
+```cli
+pip install tkinter 
+````
+
+Depois:
+
+```cli
+pip intall Pillow
 ```
-pip install -r requirements.txt
+
+## Uso 
+Para rodar o código, use o seguinte comando:
+
+```cli
+python main.py
 ```
+
+## Outros 
+- É crucial que o Python e o Pillow sejam intalados para realizar a execução do projeto.
