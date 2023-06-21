@@ -53,17 +53,17 @@ def verificar_inversoes():
     global entry, resultado_label, detective_label
 
     numeros = entry.get()
+    entry.delete(0, "end")  # Limpa o campo de entrada
+
     numeros = numeros.split()
     numeros = [int(num) for num in numeros]
 
     inversoes = count_inversions(numeros)
-
+    
+    detective_label.config(text=f"Sequência de números: {numeros}")
     resultado_label.config(text=f"Número de inversões: {inversoes}")
 
-    if inversoes == 0:
-        detective_label.config(text="Essa sequência não possui inversões. O detetive agradece sua colaboração!")
-    else:
-        detective_label.config(text="Essa sequência possui inversões. O detetive investigará mais a fundo!")
+
 
 def resize_image(event):
     global imagem_original, imagem_label, imagem_detetive
