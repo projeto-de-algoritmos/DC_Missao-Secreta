@@ -1,9 +1,13 @@
 import tkinter as tk
+from tkinter import ttk
 from PIL import ImageTk, Image
 
 entry = None
 resultado_label = None
 detective_label = None
+imagem_label = None
+imagem_original = None
+imagem_detetive = None
 
 def merge_sort(arr):
     if len(arr) <= 1:
@@ -47,38 +51,47 @@ def count_inversions(arr):
 
 def verificar_inversoes():
     global entry, resultado_label, detective_label
-    
+
     numeros = entry.get()
     numeros = numeros.split()
     numeros = [int(num) for num in numeros]
-    
+
     inversoes = count_inversions(numeros)
-    
+
     resultado_label.config(text=f"Número de inversões: {inversoes}")
-    
+
     if inversoes == 0:
         detective_label.config(text="Essa sequência não possui inversões. O detetive agradece sua colaboração!")
     else:
         detective_label.config(text="Essa sequência possui inversões. O detetive investigará mais a fundo!")
 
+def resize_image(event):
+    global imagem_original, imagem_label, imagem_detetive
+
+    nova_largura = event.width
+    nova_altura = event.height
+
+    imagem_redimensionada = imagem_original.resize((nova_largura, nova_altura), Image.ANTIALIAS)
+    imagem_detetive = ImageTk.PhotoImage(imagem_redimensionada)
+
+    imagem_label.config(image=imagem_detetive)
+
 def abrir_janela_principal():
-    global janela_inicial, entry, resultado_label, detective_label
-    
+    global entry, resultado_label, detective_label
+
     janela_inicial.destroy()
-    
-    # Cria a janela principal
+
     janela = tk.Tk()
-    janela.title("Jogo do Detetive")
+    janela.title("Jogo do Detive - Investigação")
+    janela.geometry("600x400")
 
-    # Cria os elementos da interface
-    titulo_label = tk.Label(janela, text="Bem-vindo ao caso do Detetive!", font=("Arial", 16))
-    instrucao_label = tk.Label(janela, text="Digite uma sequência de números separados por espaços:", font=("Arial", 12))
-    entry = tk.Entry(janela, font=("Arial", 12))
-    verificar_button = tk.Button(janela, text="Verificar", command=verificar_inversoes, font=("Arial", 12))
-    resultado_label = tk.Label(janela, text="", font=("Arial", 12))
-    detective_label = tk.Label(janela, text="", font=("Arial", 12))
+    titulo_label = ttk.Label(janela, text="001 - Caso da Contagem de Inversões!", font=("Arial", 16))
+    instrucao_label = ttk.Label(janela, text="Digite uma sequência de números separados por espaços:", font=("Arial", 12))
+    entry = ttk.Entry(janela, font=("Arial", 12))
+    verificar_button = ttk.Button(janela, text="Verificar", command=verificar_inversoes)
+    resultado_label = ttk.Label(janela, text="", font=("Arial", 12))
+    detective_label = ttk.Label(janela, text="", font=("Arial", 12))
 
-    # Posiciona os elementos na janela
     titulo_label.pack(pady=10)
     instrucao_label.pack()
     entry.pack(pady=5)
@@ -86,23 +99,40 @@ def abrir_janela_principal():
     resultado_label.pack()
     detective_label.pack(pady=10)
 
-    # Inicia o loop principal da janela
     janela.mainloop()
+    
+def aumentar_texto(event):
+    # Função para aumentar o tamanho da fonte do texto
+    global texto_label
 
-# Cria a janela inicial
-janela_inicial = tk.Tk()
-janela_inicial.title("Jogo do Detetive - Início")
+    nova_tamanho_fonte = max(int(event.width / 40), 10)
+    texto_label.configure(font=("Arial", nova_tamanho_fonte, "bold"))
+def abrir_janela_inicial():
+    global janela_inicial, imagem_original, imagem_detetive, imagem_label
 
-# Carrega a imagem do detetive
-imagem_detetive = ImageTk.PhotoImage(Image.open("assets/detetive.png"))
+    janela_inicial = tk.Tk()
+    janela_inicial.title("Jogo do Detetive - Início")
+    janela_inicial.geometry("600x400")
 
-# Cria o rótulo para exibir a imagem
-imagem_label = tk.Label(janela_inicial, image=imagem_detetive)
-imagem_label.pack(pady=10)
+    imagem_original = Image.open("assets/detetive.png")
+    imagem_detetive = ImageTk.PhotoImage(imagem_original)
+    imagem_label = ttk.Label(janela_inicial, image=imagem_detetive)
+    imagem_label.pack(expand=True, fill="both")
+    
+    texto_label = ttk.Label(janela_inicial, text="O renomado detetive Ryan Donovan precisa da\n"
+                                             "sua ajuda para solucionar um caso que acaba\n"
+                                             "de surgir. Clique em iniciar para a aventura\n"
+                                             "começar e boa sorte!",
+                       font=("Arial", 12, "bold"))
+    texto_label.configure(background='white')
+    texto_label.place(relx=0.40, rely=0.40, anchor="center")
+    
+    iniciar_button = ttk.Button(janela_inicial, text="Iniciar", command=abrir_janela_principal)
+    iniciar_button.place(relx=0.45, rely=0.60, anchor="center")
 
-# Cria o botão para abrir a janela principal
-iniciar_button = tk.Button(janela_inicial, text="Iniciar", command=abrir_janela_principal, font=("Arial", 12))
-iniciar_button.pack(pady=5)
+    janela_inicial.resizable(True, True)
+    janela_inicial.bind("<Configure>", resize_image)
 
-# Inicia o loop principal da janela inicial
-janela_inicial.mainloop()
+    janela_inicial.mainloop()
+
+abrir_janela_inicial()
