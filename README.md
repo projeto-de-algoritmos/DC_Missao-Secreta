@@ -18,6 +18,7 @@ O projeto consiste em uma interface gráfica e interativa que permite ao usuári
 
 ## Instalação  
 **Linguagem**: Python 3.7.9 <br>
+**Framework**: Tkinter
 
 Uma vez que o python for instalado, execute o comando abaixo para instalar as dependências:
 
@@ -39,4 +40,5 @@ python main.py
 ```
 
 ## Outros 
-- É crucial que o Python e o Pillow sejam intalados para realizar a execução do projeto.
+- É crucial que o Python e o Pillow sejam intalados para realizar a execução do projeto;
+- Se certifique de que o arquivo de imagem "detetive.png" esteja presente no mesmo diretório do código ou forneça o caminho correto para o arquivo de imagem, caso contrário, você pode encontrar um erro ao tentar executar o código.
