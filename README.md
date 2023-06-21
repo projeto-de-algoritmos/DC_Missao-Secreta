@@ -15,7 +15,7 @@ O detetive irá usar o algoritmo de ordenação merge sort, para contar o númer
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: Python<br>
+**Linguagem**: Python 3.7.9<br>
 
 Instale as dependêcias necessarias:
 
