@@ -12,7 +12,11 @@
 O detetive irá usar o algoritmo de ordenação merge sort, para contar o número de inversões em uma sequência de números e informar também se não houver inversões.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![image](https://github.com/projeto-de-algoritmos/DC_Missao-Secreta/assets/67131700/769a084e-fcc7-4f1f-8c3f-448763d8ae52)
+
+![image](https://github.com/projeto-de-algoritmos/DC_Missao-Secreta/assets/67131700/d9cc7356-4dc9-49b5-8274-c941ccf5eb57)
+
+
 
 ## Instalação 
 **Linguagem**: Python 3.7.9<br>
