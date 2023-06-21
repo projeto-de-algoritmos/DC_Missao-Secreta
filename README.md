@@ -9,7 +9,7 @@
 | 20/2046040  |  Dara Maria Barbosa de Sousa  |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O detetive irá usar o algoritmo de ordenação merge sort, para contar o número de inversões em uma sequência de números e informar também se não houver inversões.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
