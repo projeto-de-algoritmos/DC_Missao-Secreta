@@ -12,6 +12,7 @@
 O detetive irá usar o algoritmo de ordenação merge sort, para contar o número de inversões em uma sequência de números e informar também se não houver inversões.
 
 ## Screenshots
+<<<<<<< HEAD
 ![ScreenShot1](./assets/tela_1.png)
 ![ScreenShot1](./assets/tela_2.png)
 ![ScreenShot1](./assets/tela_3.png)
@@ -24,9 +25,3 @@ Instale as dependêcias necessarias:
 ```
 pip install -r requirements.txt
 ```
-
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
