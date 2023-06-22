@@ -2,7 +2,7 @@
 
 **Conteúdo da Disciplina**: Dividir e Conquistar <br>
 
-## Aluna
+## Alunas
 |Matrícula | Aluna |
 | -- | -- |
 | 20/0041606  |  Marina Márcia Costa de Souza |
