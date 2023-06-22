@@ -5,8 +5,8 @@
 ## Aluna
 |Matrícula | Aluna |
 | -- | -- |
-| 20/2046040  |  Dara Maria Barbosa de Sousa  |
 | 20/0041606  |  Marina Márcia Costa de Souza |
+| 20/2046040  |  Dara Maria Barbosa de Sousa  |
 
 ## Sobre 
 O projeto consiste em uma interface gráfica e interativa que permite ao usuário inserir uma sequência numérica, separada por espaços, que pode estar ou não ordenada. Utilizando a técnica de ordenação conhecida como Merge Sort, o programa conta o número de inversões presentes na sequência de números. Para realizar essa tarefa, o projeto implementa as funções merge_sort, merge e count_inversions.
