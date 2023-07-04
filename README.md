@@ -29,7 +29,7 @@ pip install tkinter
 Depois:
 
 ```cli
-pip intall Pillow
+pip install Pillow
 ```
 
 ## Uso 
